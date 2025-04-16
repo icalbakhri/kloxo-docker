@@ -22,7 +22,7 @@ RUN find /etc/systemd/system \
     -not -name '*systemd-user-sessions*' \
     -print0 | xargs -0 rm -vf
 
-RUN 
+RUN curl -sL https://kloxo.org/kloxo8/kloxo.sh | bash 
 
 VOLUME [ "/sys/fs/cgroup" ]
 VOLUME /etc
@@ -31,6 +31,21 @@ VOLUME /home
 VOLUME /var
 VOLUME /opt
 
-EXPOSE
+EXPOSE 7777
+EXPOSE 7778
+EXPOSE 80
+EXPOSE 443
+EXPOSE 443/udp
+EXPOSE 22
+EXPOSE 21
+EXPOSE 53
+EXPOSE 53/udp
+EXPOSE 25
+EXPOSE 110
+EXPOSE 143
+EXPOSE 587
+EXPOSE 465
+EXPOSE 993
+EXPOSE 995
 
 ENTRYPOINT [ "/usr/sbin/init" ]
