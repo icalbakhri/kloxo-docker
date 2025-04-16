@@ -1,0 +1,2 @@
+#BASH
+if [ -z "$var" ]
